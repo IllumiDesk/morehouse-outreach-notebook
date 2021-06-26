@@ -5,8 +5,8 @@ FROM jupyter/datascience-notebook:b32574afeeae
 
 # RUN git clone https://github.com/michiganrobotics/rob101
 
-# COPY git_clone_merge.sh /usr/local/bin/before-notebook.d/
-# RUN chmod a+rx /usr/local/bin/before-notebook.d/git_clone_merge.sh
+COPY git_clone_merge.sh /usr/local/bin/before-notebook.d/
+RUN chmod a+rx /usr/local/bin/before-notebook.d/git_clone_merge.sh
 
 # instantiate and pre-compile julia packages
 COPY Project.toml /opt/julia/environments/v1.6/.
