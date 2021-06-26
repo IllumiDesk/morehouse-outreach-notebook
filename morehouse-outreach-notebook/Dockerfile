@@ -31,10 +31,3 @@ RUN ln -s "${CONDA_DIR}/envs/notebook/bin/jupyter" /usr/local/bin/ \
 USER "${NB_UID}"
 
 WORKDIR "${HOME}"
-
-# copy files as late as possible to avoid cache busting
-USER root
-COPY git_clone_merge.sh /usr/local/bin/before-notebook.d/
-RUN chmod a+rx /usr/local/bin/before-notebook.d/git_clone_merge.sh
-
-USER "${NB_UID}"
