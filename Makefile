@@ -31,7 +31,7 @@ help:
 build/%: DARGS?=
 build/%: TAG?=
 build/%: ## build the latest image for a stack
-	@docker build -t $(OWNER)/$(notdir $@):$(TAG) ./$(notdir $@) .
+	@docker build -t $(OWNER)/$(notdir $@):$(TAG) ./$(notdir $@)/.
 	@echo -n "Built image size: "
 	@docker images $(OWNER)/$(notdir $@):$(TAG) --format "{{.Size}}"
 
