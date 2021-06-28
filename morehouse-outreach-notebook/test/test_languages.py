@@ -10,7 +10,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 @pytest.mark.parametrize(
-    'language,version_output', [('python', ['Python', '3.9.5\n']), ('julia', ['julia', 'version', '1.6.0\n']),],
+    'language,version_output', [('python', ['Python', '3.9.5\n']), ('julia', ['julia', 'version', '1.6.1\n']),],
 )
 def test_languages(language, version_output):
     """Ensure that the language is available in the container's PATH and that
