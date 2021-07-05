@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.com/IllumiDesk/docker-stacks.svg?branch=main)](https://travis-ci.com/IllumiDesk/docker-stacks)
+[![Build Status](https://travis-ci.com/IllumiDesk/morehouse-outreach-notebook.svg?branch=main)](https://travis-ci.com/IllumiDesk/morehouse-outreach-notebook)
 
-# IllumiDesk Docker Stacks
+# IllumiDesk Morehouse Outreach Notebook
 
-Dockerfiles and related assets for IllumiDesk's workspace images. The purpose of this repo is to provide a template repo for IllumiDesk customer-centric images. To create a new customer-centric repo, click on the Use this Template button and confirm the repo name.
+Dockerfiles and related assets the `illumidesk/morehouse-outreach-notebook` image. The image is based mostly off of the `jupyter/datascience-notebook` image + additional Julia packages managed with `Project.toml` and `Manifest.toml` files to ensure reproducability.
 
 ## Pre Requisits
 
@@ -30,8 +30,8 @@ For example:
 docker build \
   --build-arg BASE_IMAGE=jupyter/minimal-notebook \
   --build-arg TAG=latest \
-  -t illumidesk/illumidesk-notebook \
-  illumidesk-notebook/.
+  -t illumidesk/morehouse-outreach-notebook \
+  morehouse-outreach-notebook/.
 ```
 
 3. Run:
@@ -39,7 +39,7 @@ docker build \
 Running the image standalone is helpful for testing:
 
 ```bash
-docker run -p 8888:8888 illumidesk/illumidesk-notebook:latest
+docker run -p 8888:8888 illumidesk/morehouse-outreach-notebook:latest
 ```
 
 Then, navigate to `http://localhost:8888` to access your Jupyter Notebook server.
